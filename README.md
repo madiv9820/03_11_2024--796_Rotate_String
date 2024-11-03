@@ -1,4 +1,4 @@
-- ## Brute Force using Rotation
+- ## Approach 1:- Brute Force using Rotation
 
     - ### Intuition
         - The goal is to determine if the string `goal` can be obtained by rotating the string `s`. A rotation of a string involves moving characters from one end to the other. For example, rotating "abcde" can yield "eabcd", "deabc", and so forth. The task is to check all possible rotations of `s` to see if any match `goal`.
