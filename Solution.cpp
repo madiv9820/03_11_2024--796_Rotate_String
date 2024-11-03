@@ -2,31 +2,21 @@
 using namespace std;
 
 class Solution {
-    public:
-        bool rotateString(string s, string goal) {
-            // If 's' is already equal to 'goal', return true
-            if(s == goal)
-                return true;
-            
-            int n = s.size(); // Get the length of the string 's'
-
-            // Create a new string 'x' by taking the last character of 's' 
-            // and prepending it to the rest of the string (excluding the last character)
-            string x = s.substr(n-1) + s.substr(0, n-1);
-
-            // Continue rotating 'x' until it matches the original string 's'
-            while(x != s) {
-                // Check if the current rotation equals the target string 'goal'
-                if(x == goal)
-                    return true;
-
-                // Rotate 'x' by taking its last character and prepending it to the rest of the string
-                x = x.substr(n-1) + x.substr(0, n-1);
-            }
-
-            // If we have checked all rotations and found no match, return false
+public:
+    bool rotateString(string s, string goal) {
+        // Check if the lengths of 's' and 'goal' are different
+        // If they are, 'goal' cannot be a rotation of 's'
+        if (s.length() != goal.length())
             return false;
-        }
+        
+        // Create a new string by concatenating 's' with itself
+        string double_string = s + s;
+        
+        // Check if 'goal' is a substring of 'double_string'
+        // Using find() returns the index of 'goal' in 'double_string' if found,
+        // and the condition checks if the index is valid (less than the length of double_string)
+        return double_string.find(goal) < double_string.length();
+    }
 };
 
 int main() {
