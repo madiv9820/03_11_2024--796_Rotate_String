@@ -40,9 +40,6 @@
                 return False
         ```
         ```C++ []
-        #include <bits/stdc++.h>
-        using namespace std;
-
         class Solution {
             public:
                 bool rotateString(string s, string goal) {
@@ -70,13 +67,4 @@
                     return false;
                 }
         };
-
-        int main() {
-            string s, goal;
-            cin >> s >> goal;
-
-            Solution sol;
-            bool result = sol.rotateString(s = s, goal = goal);
-            cout << ((result) ? "True" : "False") << endl;
-        }
         ```
